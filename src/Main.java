@@ -9,7 +9,6 @@
 //add robloc
 //add robloc
 
-
 import java.util.*;
 
 public class Main {
@@ -18,6 +17,7 @@ public class Main {
 
     public static void main(String[] args) {
         options();
+        
 //case switch is so confusing to me TT
 //Logan's explantion helped but no, just no
 // add robloc
@@ -70,7 +70,7 @@ public class Main {
         if (tasks.isEmpty()) {
             System.out.println("No tasks available.\n(Hint: Add a task:>!)");
         } else {
-            System.out.println("List of all of your tasks:\n");
+            System.out.println("List of all of your tasks: ");
             for (String task : tasks) {
                 System.out.println(task);
             }
@@ -79,16 +79,16 @@ public class Main {
     }
 
     static void deleteTask() {
-        System.out.println("Enter the task number to delete:\n");
+        System.out.println("Which task to delete (Note: this is by number not what is in said task)\n");
         listTasks();
         int taskNumber = input.nextInt();
         input.nextLine();
 
         if (taskNumber > 0 && taskNumber <= tasks.size()) {
             tasks.remove(taskNumber - 1);
-            System.out.println("Task removed successfully.\n");
+            System.out.println("The task has been removed!\n");
         } else {
-            System.out.println("Invalid task number.\n");
+            System.out.println("ERM... That task like doesn't exist.(Hint: Choose an actual task <:)\n");
         }
         options();
     }
@@ -104,9 +104,9 @@ public class Main {
             System.out.println("What should the task be now:");
             String newDescription = input.nextLine();
             tasks.set(taskNumber - 1, newDescription);
-            System.out.println("Task updated successfully.\n");
+            System.out.println("LET'SSS GOOO TASK HAS BEEN CHANGED\n");
         } else {
-            System.out.println("Invalid task number.\n");
+            System.out.println("ERM... That task like doesn't exist.(Hint: Choose an actual task <:)\n");
         }
         System.out.println("\n");
         options();
