@@ -1,6 +1,14 @@
 //Jocelin Martinez-Reyes
 //Project 1 2/4/25
 //add robloc
+//add robloc
+//add robloc
+//add robloc
+//add robloc
+//add robloc
+//add robloc
+//add robloc
+
 
 import java.util.*;
 
@@ -12,6 +20,10 @@ public class Main {
         options();
 //case switch is so confusing to me TT
 //Logan's explantion helped but no, just no
+// add robloc
+//add robloc
+//add robloc
+
         int quit = 0;
         while (quit == 0) {
             int userResponse = input.nextInt();
@@ -56,10 +68,10 @@ public class Main {
 
     static void listTasks() {
         if (tasks.isEmpty()) {
-            System.out.println("No tasks available.\n(Hint: Add a task:>!)\n");
+            System.out.println("No tasks available.\n(Hint: Add a task:>!)");
         } else {
             System.out.println("List of all of your tasks:\n");
-            for(String task : tasks){
+            for (String task : tasks) {
                 System.out.println(task);
             }
         }
@@ -88,15 +100,15 @@ public class Main {
         int taskNumber = input.nextInt();
         input.nextLine();
 
-
         if (taskNumber > 0 && taskNumber <= tasks.size()) {
-            System.out.println("What should the task be now: \n");
+            System.out.println("What should the task be now:");
             String newDescription = input.nextLine();
             tasks.set(taskNumber - 1, newDescription);
             System.out.println("Task updated successfully.\n");
         } else {
             System.out.println("Invalid task number.\n");
         }
+        System.out.println("\n");
         options();
     }
 }
