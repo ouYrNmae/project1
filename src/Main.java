@@ -8,6 +8,7 @@
 //add robloc
 //add robloc
 //add robloc
+// looking at logan's, omar's and Dominic's code makes me realize how much i actually overthink/overdo with mine (as in lines of code and how for every option i just add extra 😭 --> the if/else staenemtns :p)
 
 import java.util.*;
 
@@ -93,7 +94,6 @@ public class Main {
         options();
     }
 
-
     static void updateTask() {
         System.out.println("Which one: ");
         listTasks();
@@ -105,10 +105,10 @@ public class Main {
             String newDescription = input.nextLine();
             tasks.set(taskNumber - 1, newDescription);
             System.out.println("LET'SSS GOOO TASK HAS BEEN CHANGED\n");
+            //inspired by Dom XD ^
         } else {
             System.out.println("ERM... That task like doesn't exist.(Hint: Choose an actual task <:)\n");
         }
-        System.out.println("\n");
         options();
     }
 }
