@@ -1,14 +1,41 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+//Jocelin Martinez-Reyes
+//Project 1 2/4/25
+//add robloc
+
+import java.util.*;
 
 public class Main {
     static Scanner input = new Scanner(System.in);
+    static ArrayList<String> tasks = new ArrayList<>();
+
     public static void main(String[] args) {
-//        ArrayList<Integer> ints = new ArrayList<>();
-//        ints.add(5);
-//        ints.add(6);
-//        System.out.println(ints);
+        options();
+//case switch is so confusing to me TT
+//Logan's explantion helped but no, just no
+        int quit = 0;
+        while (quit == 0) {
+            int userResponse = input.nextInt();
+            input.nextLine();
+            if (userResponse == 1) {
+                addTask();
+            } else if (userResponse == 2) {
+                deleteTask();
+            } else if (userResponse == 3) {
+                updateTask();
+            } else if (userResponse == 4) {
+                listTasks();
+            } else if (userResponse == 0) {
+                quit = 1;
+                System.out.println("BYE-BYE\nBYE-BYE\nBYE-BYE");
+            } else {
+                options();
+                System.out.println("Try again bud, that wasn't a choice.\n");
+            }
+        }
+    }
+
+
+    static void options() {
         System.out.println("""
                 Please choose an option:
                 (1) Add a task.
@@ -17,34 +44,60 @@ public class Main {
                 (4) List all tasks.
                 (0) Exit.
                 """);
-        int quit = 0;
-        int userResponse = input.nextInt();
-        while (quit == 0){
-            if (userResponse ==1){
-                System.out.println("Add task");
-                addTask();
+    }
 
-            }
-            else if (userResponse ==2){
-                System.out.println("Remove task");
-            }
-            else if (userResponse ==3){
-                System.out.println("update task");
-            }
-            else if (userResponse ==4){
-                System.out.println("listing all tasks");
-            }
-            else {
-                System.out.println("exiting");
+    static void addTask() {
+        System.out.println("What's the task?");
+        String task = input.nextLine();
+        tasks.add(task);
+        System.out.println("Task has been added :D!\n");
+        options();
+    }
+
+    static void listTasks() {
+        if (tasks.isEmpty()) {
+            System.out.println("No tasks available.\n(Hint: Add a task:>!)\n");
+        } else {
+            System.out.println("List of all of your tasks:\n");
+            for(String task : tasks){
+                System.out.println(task);
             }
         }
-
+        options();
     }
-    static void addTask(){
-        ArrayList<String> tasks = new ArrayList<>();
-        System.out.println("Input a task:");
-        String task = input.nextLine();
-        tasks.add("task");
-        System.out.println("Task added successfully.");
+
+    static void deleteTask() {
+        System.out.println("Enter the task number to delete:\n");
+        listTasks();
+        int taskNumber = input.nextInt();
+        input.nextLine();
+
+        if (taskNumber > 0 && taskNumber <= tasks.size()) {
+            tasks.remove(taskNumber - 1);
+            System.out.println("Task removed successfully.\n");
+        } else {
+            System.out.println("Invalid task number.\n");
+        }
+        options();
+    }
+
+
+    static void updateTask() {
+        System.out.println("Which one: ");
+        listTasks();
+        int taskNumber = input.nextInt();
+        input.nextLine();
+
+
+        if (taskNumber > 0 && taskNumber <= tasks.size()) {
+            System.out.println("What should the task be now: \n");
+            String newDescription = input.nextLine();
+            tasks.set(taskNumber - 1, newDescription);
+            System.out.println("Task updated successfully.\n");
+        } else {
+            System.out.println("Invalid task number.\n");
+        }
+        options();
     }
 }
+//add robloc
