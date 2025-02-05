@@ -8,7 +8,7 @@
 //add robloc
 //add robloc
 //add robloc
-// looking at logan's, omar's and Dominic's code makes me realize how much i actually overthink/overdo with mine (as in lines of code and how for every option i just add extra 😭 --> the if/else staenemtns :p)
+// looking at other people's code makes me realize how much i actually overthink/overdo with mine (as in lines of code and how for every option i just add extra 😭 --> the if/else staenemtns :p)
 
 import java.util.*;
 
